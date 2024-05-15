@@ -1,13 +1,13 @@
 all:
-	ninja -C build
+	make -C build
 
 
 run: all
-	./build/c_http
+	./build/tcp_server
 
 clear:
 	rm -rf build/*
 	rm -rf build/.*
 
 setup: clear
-	cmake -B build -S . -GNinja
+	cmake -B build -S .

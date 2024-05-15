@@ -15,7 +15,7 @@ void *handle_client(void *arg) {
   int client_sock = *((int *)arg);
   char buffer[256] = {0};
   recv(client_sock, buffer, sizeof(buffer), 0);
-  printf("%s", buffer);
+  send(client_sock, buffer, sizeof(buffer), 0);
   close(client_sock);
   pthread_exit(NULL);
 }
